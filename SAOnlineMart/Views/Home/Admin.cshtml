@@ -1,0 +1,95 @@
+﻿@{
+    ViewData["Title"] = "Admin";
+}
+
+<h2 style="text-align: center;">Admin Page</h2>
+
+<hr />
+
+<form method="post" action="/Home/AddProduct">
+    <div style="display: flex; justify-content: center; margin: 20px;">
+        <div style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; width: 400px; text-align: left;">
+            <h4 style="text-align: center;">Add Product</h4>
+
+            <hr />
+
+            <label for="productName" style="font-size: 1.2em; color: #555;">Product Name:</label>
+            <input id="productName" name="productName" type="text" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;" />
+
+            <label for="productCreator" style="font-size: 1.2em; color: #555;">Product Creator:</label>
+            <input id="productCreator" name="productCreator" type="text" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;" />
+
+            <label for="productDescription" style="font-size: 1.2em; color: #555;">Product Description:</label>
+            <textarea id="productDescription" name="productDescription" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;"></textarea>
+
+            <label for="productPrice" style="font-size: 1.2em; color: #555;">Product Price:</label>
+            <input id="productPrice" name="productPrice" type="text" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;" />
+
+            <label for="productStatus" style="font-size: 1.2em; color: #555;">Product Status:</label>
+            <input id="productStatus" name="productStatus" type="text" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;" />
+
+            <label for="productImage" style="font-size: 1.2em; color: #555;">Product Image Link:</label>
+            <input id="productImage" name="productImage" type="text" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;" />
+
+            <button type="submit" style="background-color: #281E5D; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 20px;">
+                Add Product
+            </button>
+        </div>
+    </div>
+</form>
+
+<form method="post" action="/Home/EditProduct">
+    <div style="display: flex; justify-content: center; margin: 20px;">
+        <div style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; width: 400px; text-align: left;">
+            <h4 style="text-align: center;">Edit Product</h4>
+
+            <hr />
+
+            <label for="editProductId" style="font-size: 1.2em; color: #555;">Product ID:</label>
+            <input id="editProductId" name="productID" type="text" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;" />
+
+            <label for="editProductName" style="font-size: 1.2em; color: #555;">Product Name:</label>
+            <input id="editProductName" name="productName" type="text" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;" />
+
+            <label for="editProductCreator" style="font-size: 1.2em; color: #555;">Product Creator:</label>
+            <input id="editProductCreator" name="editProductCreator" type="text" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;" />
+
+            <label for="editProductDescription" style="font-size: 1.2em; color: #555;">Product Description:</label>
+            <textarea id="editProductDescription" name="productDescription" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;"></textarea>
+
+            <label for="editProductPrice" style="font-size: 1.2em; color: #555;">Product Price:</label>
+            <input id="editProductPrice" name="productPrice" type="text" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;" />
+
+            <label for="editProductStatus" style="font-size: 1.2em; color: #555;">Product Status:</label>
+            <input id="editProductStatus" name="productStatus" type="text" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;" />
+
+            <label for="editProductImage" style="font-size: 1.2em; color: #555;">Product Image Link:</label>
+            <input id="editProductImage" name="productImage" type="text" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;" />
+
+            <button type="submit" style="background-color: #281E5D; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 20px;">
+                Apply Changes
+            </button>
+        </div>
+    </div>
+</form>
+
+<form method="post" action="/Home/DeleteProduct">
+    <div style="display: flex; justify-content: center; margin: 20px;">
+        <div style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; width: 400px; text-align: left;">
+            <h4 style="text-align: center;">Delete Product</h4>
+
+            <hr />
+
+            <label for="deleteProductId" style="font-size: 1.2em; color: #555;">Product ID:</label>
+            <input id="deleteProductId" name="productID" type="text" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;" />
+
+            <button type="submit" style="background-color: #281E5D; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 20px;">
+                Delete Product
+            </button>
+        </div>
+    </div>
+</form>
+
+<hr />
+
+

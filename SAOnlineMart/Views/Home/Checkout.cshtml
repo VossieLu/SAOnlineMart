@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Checkout";
+}
+
+<h2 style="text-align: center;">Checkout</h2>
+
+<hr />
+
+<p style="text-align: center;">
+    You're just a few steps away from completing your order! Please fill in the shipping details below and click "Proceed to Payment"
+    to continue. Your information is secure and will only be used for processing your order.
+</p>
+
+<div style="display: flex; justify-content: center; margin: 20px;">
+    <div style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; width: 400px; text-align: left;">
+        <h4 style="text-align: center;">Shipping Details</h4>
+
+        <hr />
+
+        <form asp-action="Checkout" method="post">
+            <label for="phoneNumber" style="font-size: 1.2em; color: #555;">Phone Number:</label>
+            <input id="phoneNumber" name="phoneNumber" type="text" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;" />
+
+            <label for="address" style="font-size: 1.2em; color: #555;">Address:</label>
+            <input id="address" name="address" type="text" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;" />
+
+            <label for="suburb" style="font-size: 1.2em; color: #555;">Suburb:</label>
+            <input id="suburb" name="suburb" type="text" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;" />
+
+            <label for="city" style="font-size: 1.2em; color: #555;">City:</label>
+            <input id="city" name="city" type="text" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;" />
+
+            <label for="province" style="font-size: 1.2em; color: #555;">Province:</label>
+            <input id="province" name="province" type="text" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;" />
+
+            <button type="submit" style="background-color: #281E5D; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 20px;">
+                Proceed to Payment
+            </button>
+        </form>
+    </div>
+</div>
+
+<hr />

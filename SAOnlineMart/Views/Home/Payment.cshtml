@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Payment";
+}
+
+<h2 style="text-align: center;">Payment</h2>
+
+<hr />
+
+<div style="display: flex; justify-content: center; margin: 20px;">
+    <div style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; width: 400px; text-align: left;">
+        <h4 style="text-align: center;">Payment Details</h4>
+
+        <hr />
+
+        <form asp-action="Payment" method="post">
+            <label for="cardNumber" style="font-size: 1.2em; color: #555;">Card Number:</label>
+            <input id="cardNumber" name="cardNumber" type="text" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;" required />
+
+            <label for="expiryDate" style="font-size: 1.2em; color: #555;">Expiry Date (MM/YY):</label>
+            <input id="expiryDate" name="expiryDate" type="text" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;" required />
+
+            <label for="cvv" style="font-size: 1.2em; color: #555;">CVV:</label>
+            <input id="cvv" name="cvv" type="text" style="width: 100%; padding: 10px; margin: 10px 0 20px 0; border-radius: 5px; border: 1px solid #ddd;" required />
+
+            <button type="submit" style="background-color: #281E5D; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 20px;">
+                Confirm Payment
+            </button>
+        </form>
+    </div>
+</div>
+
+<hr />

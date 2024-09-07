@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Catalogue";
+}
+
+<h1 style="text-align: center;">Catalogue</h1>
+
+<hr />
+
+<h2 style="text-align: center;">Current Offers</h2>
+<div style="display: flex; justify-content: space-around; margin: 20px;">
+    @foreach (var product in ViewBag.SaleProducts)
+    {
+        <div style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; width: 300px; text-align: center;">
+            <img src="@Url.Content("~/images/" + product.productImage)" alt="@product.productName" style="width: 100%; height: auto;" />
+            <h3>@product.productName</h3>
+            <p><strong>Business:</strong> @product.productCreator</p>
+            <p style="font-size: 1.2em; color: #555;">Price: @String.Format("{0:C}", product.productPrice)</p>
+            <p style="color: #777;">@product.productDescription</p>
+            <form method="post" action="/Home/AddToCart">
+                <input type="hidden" name="productID" value="@product.productID" />
+                <input type="number" name="quantity" min="1" value="1" style="width: 50px; margin-right: 10px;" />
+                <button style="background-color: #281E5D; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+                    Add to Cart
+                </button>
+            </form>
+        </div>
+    }
+</div>
+
+<hr />
+
+<h2 style="text-align: center;">Other</h2>
+<div style="display: flex; justify-content: space-around; margin: 20px;">
+    @foreach (var product in ViewBag.RegularProducts)
+    {
+        <div style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; width: 300px; text-align: center;">
+            <img src="@Url.Content("~/images/" + product.productImage)" alt="@product.productName" style="width: 100%; height: auto;" />
+            <h3>@product.productName</h3>
+            <p><strong>Business:</strong> @product.productCreator</p>
+            <p style="font-size: 1.2em; color: #555;">Price: @String.Format("{0:C}", product.productPrice)</p>
+            <p style="color: #777;">@product.productDescription</p>
+            <form method="post" action="/Home/AddToCart">
+                <input type="hidden" name="productID" value="@product.productID" />
+                <input type="number" name="quantity" min="1" value="1" style="width: 50px; margin-right: 10px;" />
+                <button style="background-color: #281E5D; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+                    Add to Cart
+                </button>
+            </form>
+        </div>
+    }
+</div>
+
+<hr />
+

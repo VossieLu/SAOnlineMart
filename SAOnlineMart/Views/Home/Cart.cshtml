@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Cart";
+}
+
+<h2 style="text-align: center;">Shopping Cart</h2>
+
+<hr />
+
+<div style="display: flex; justify-content: center; margin: 20px;">
+    <div style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; width: 400px; text-align: left;">
+        <h4 style="text-align: center;">Your Cart</h4>
+
+        <hr />
+
+        @if (ViewBag.CartItems.Count > 0)
+        {
+            @foreach (var item in ViewBag.CartItems)
+            {
+                <div style="border: 1px dashed #aaa; padding: 20px; margin-bottom: 20px; text-align: center; color: #555;">
+                    @item.productName x @item.productQuantity
+                </div>
+            }
+        }
+        else
+        {
+            <div style="border: 1px dashed #aaa; padding: 20px; margin-bottom: 20px; text-align: center; color: #777;">
+                Items in your cart will be displayed here.
+            </div>
+        }
+
+        <p style="font-size: 1.2em; color: #555; text-align: right;">
+            Total: <strong>@String.Format("{0:C}", ViewBag.TotalAmount)</strong>
+        </p>
+
+        <form method="post" action="/Home/ClearCart">
+            <button style="background-color: #FF0000; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 10px;">
+                Clear Cart
+            </button>
+        </form>
+
+        <form method="post" action="/Home/ProceedToCheckout">
+            <button style="background-color: #281E5D; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 20px;">
+                Proceed to Checkout
+            </button>
+        </form>
+    </div>
+</div>
+
+<hr />

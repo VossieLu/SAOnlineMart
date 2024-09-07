@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<hr />
+
+<div style="display: flex; justify-content: center; margin: 20px;">
+    <div style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; width: 400px; text-align: left;">
+        <h4 style="text-align: center;">Account Login</h4>
+
+        <hr />
+
+        <form asp-action="Login" method="post">
+            <div style="margin-bottom: 10px;">
+                <input type="text" name="email" placeholder="Email" style="width: 100%; padding: 10px; box-sizing: border-box;" required />
+            </div>
+            <div style="margin-bottom: 20px;">
+                <input type="password" name="password" placeholder="Password" style="width: 100%; padding: 10px; box-sizing: border-box;" required />
+            </div>
+            <button type="submit" style="background-color: #281E5D; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Log In</button>
+        </form>
+
+        @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+        {
+            <p style="color: red;">@ViewBag.ErrorMessage</p>
+        }
+
+        <p style="text-align: center; margin-top: 20px; color: #555;">
+            Don't have an account? <a href="@Url.Action("Register", "Home")" style="color: #281E5D; text-decoration: none;">Register now!</a>
+        </p>
+    </div>
+</div>
+
+<hr />
+
+
